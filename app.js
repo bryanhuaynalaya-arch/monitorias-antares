@@ -2,9 +2,9 @@ const materias = [
   {nombre:'Matemáticas Básicas', tono:'blue', imagen:'matematicas', numero:'01', temas:['Álgebra','Funciones','Ecuaciones','Trigonometría']},
   {nombre:'Geometría Vectorial', tono:'teal', imagen:'geometria', numero:'02', temas:['Vectores','Rectas','Planos']},
   {nombre:'Cálculo Diferencial', tono:'gold', imagen:'calculo', numero:'03', temas:['Límites','Derivadas','Aplicaciones']},
-  {nombre:'Álgebra Lineal', tono:'blue', imagen:'matematicas', numero:'04', temas:['Matrices','Sistemas','Espacios vectoriales']},
-  {nombre:'Cálculo Integral', tono:'gold', imagen:'calculo', numero:'05', temas:['Integrales','Técnicas','Aplicaciones']},
-  {nombre:'Física Mecánica', tono:'teal', imagen:'geometria', numero:'06', temas:['Movimiento','Fuerzas','Energía']}
+  {nombre:'Álgebra Lineal', tono:'blue', imagen:'algebra-lineal', numero:'04', temas:['Matrices','Sistemas','Espacios vectoriales']},
+  {nombre:'Cálculo Integral', tono:'gold', imagen:'calculo-integral', numero:'05', temas:['Integrales','Técnicas','Aplicaciones']},
+  {nombre:'Física Mecánica', tono:'teal', imagen:'fisica-mecanica', numero:'06', temas:['Movimiento','Fuerzas','Energía']}
 ];
 const tipos = [['Todos','todos'],['Videos','video'],['Documentos','documento'],['Parciales','parcial']];
 const datos = window.CONTENIDO || {recursos:[],horarios:[],formulario:''};
@@ -38,6 +38,7 @@ $('busqueda').addEventListener('input',()=>{visibles=12;pintar();});
 $('tipos').addEventListener('click',e=>{const b=e.target.closest('[data-tipo]');if(!b)return;tipo=b.dataset.tipo;visibles=12;pintar();});
 $('mostrar-mas').addEventListener('click',()=>{visibles+=12;pintar();});
 $('recursos').addEventListener('click',e=>{const b=e.target.closest('[data-video]');if(!b)return; const id=b.dataset.video; if(!/^[\w-]{11}$/.test(id))return; $('video-title').textContent=b.dataset.title; $('video-frame').innerHTML=`<iframe title="Video tutorial" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`; $('video-dialog').showModal();});
+$('video-demo').addEventListener('click',()=>{const id='arqB81STyQQ';$('video-title').textContent='Video de prueba del reproductor';$('video-frame').innerHTML=`<iframe title="Video de prueba" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;$('video-dialog').showModal();});
 $('video-close').addEventListener('click',()=>$('video-dialog').close());
 $('video-dialog').addEventListener('click',e=>{if(e.target===$('video-dialog'))$('video-dialog').close();});
 $('video-dialog').addEventListener('close',()=>$('video-frame').replaceChildren());
