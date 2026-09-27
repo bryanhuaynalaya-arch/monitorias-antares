@@ -1,16 +1,41 @@
 # Monitorías Antares
 
-Sitio estático para GitHub Pages. Incluye la portada, materias, búsqueda y filtros. Los videos, documentos y horarios aún no están cargados.
+Página gratuita de apoyo académico publicada con GitHub Pages. Las materias, búsqueda, filtros, reproducción de videos y enlaces a documentos funcionan desde archivos estáticos. No requiere instalar nada para actualizar el contenido.
 
-## Publicar gratis en GitHub Pages
+## Publicar material
 
-1. En GitHub, crea un repositorio **público** llamado `monitorias-antares`.
-2. Sube a la raíz del repositorio estos cuatro archivos: `index.html`, `style.css`, `app.js` y `favicon.svg`. Puedes usar **Add file → Upload files** y confirmar con **Commit changes**.
-3. Abre **Settings → Pages**. En **Build and deployment**, selecciona **Deploy from a branch**; elige la rama `main` y la carpeta `/(root)`. Guarda.
-4. GitHub mostrará la dirección de la página, normalmente `https://TU_USUARIO.github.io/monitorias-antares/`. La publicación puede tardar unos minutos.
+El archivo que debes editar es **`contenido.js`**. En GitHub, ábrelo y pulsa el lápiz **Edit this file**. Agrega cada recurso dentro de `recursos: [ ... ]` y pulsa **Commit changes**. Cada cambio en la rama `main` actualiza la página publicada.
 
-Los enlaces entre archivos son relativos y funcionan tanto al abrir `index.html` en el computador como en la ruta de GitHub Pages.
+Formato de un video (reemplaza el enlace por el real):
 
-## Editar contenido
+```js
+{ materia: "Geometría Vectorial", tema: "Rectas", tipo: "video",
+  titulo: "Ecuación de la recta", descripcion: "Explicación con ejemplos",
+  url: "https://www.youtube.com/watch?v=ID_DEL_VIDEO" },
+```
 
-Las tres materias y sus temas están en el arreglo `materias` de `app.js`. No se han agregado videos o PDFs ficticios. Para la siguiente versión se pueden mostrar enlaces a YouTube y Google Drive dentro del catálogo. GitHub Pages publica archivos estáticos: un panel privado de carga y solicitudes persistentes requerirá un servicio adicional.
+Formato de un PDF guardado en Google Drive:
+
+```js
+{ materia: "Cálculo Diferencial", tema: "Derivadas", tipo: "documento",
+  titulo: "Guía de derivadas", descripcion: "Ejercicios resueltos",
+  url: "https://drive.google.com/file/d/ID_DEL_ARCHIVO/view" },
+```
+
+Para un parcial de práctica usa `tipo: "parcial"`. Las materias deben llamarse exactamente `Matemáticas Básicas`, `Geometría Vectorial` o `Cálculo Diferencial`. Separa varios objetos con comas. No publiques en el repositorio archivos privados ni datos personales de estudiantes.
+
+Primero sube el video a YouTube como público o no listado. Para un PDF, súbelo a Drive y configura el acceso como **Cualquier persona con el enlace → Lector**; de lo contrario, los estudiantes no podrán abrirlo. Luego copia el enlace en el campo `url`.
+
+## Horarios y solicitudes
+
+Dentro de `contenido.js`, completa `horarios` con objetos como:
+
+```js
+{ materia: "Geometría Vectorial", dia: "Martes", hora: "4:00 p. m.", modalidad: "Presencial" },
+```
+
+En `formulario`, coloca el enlace HTTPS de un Google Form para solicitar la monitoría. El botón aparecerá solo cuando ese enlace esté configurado. El ejemplo de horario no se publica: sirve únicamente como guía.
+
+## Límite de esta versión
+
+GitHub Pages solo publica archivos estáticos. Editar `contenido.js` en GitHub funciona para administrar recursos, pero no es un panel privado dentro de la web. Para solicitudes almacenadas, cuentas o carga directa de archivos desde la página haría falta añadir otro servicio.
