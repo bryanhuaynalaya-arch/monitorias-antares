@@ -9,6 +9,11 @@
 .subject-image{display:block;height:182px;overflow:hidden;background:#eaf4f6}
 .subject-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .subject-card:hover .subject-image img{transform:scale(1.045)}
+.resource-more{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin:28px 0;color:#586e7e;font-size:.9rem}
+.resource-more button{border:1px solid #b6d4d7;border-radius:9px;background:#fff;color:#087684;padding:10px 18px;font-weight:800}
+.resource-more button:hover{background:#e8f6f5}
+.library-note{margin:26px 0 0;color:#586e7e;font-size:.88rem}
+.library-note a{color:#087684;font-weight:800;text-decoration:underline;text-underline-offset:3px}
 .subject-content{display:flex;flex-direction:column;min-height:190px;padding:18px 23px 21px}
 .subject-content .subject-top{margin-bottom:14px}
 .subject-content .subject-arrow{width:29px;height:29px}

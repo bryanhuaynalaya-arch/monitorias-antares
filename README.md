@@ -22,9 +22,11 @@ Formato de un PDF guardado en Google Drive:
   url: "https://drive.google.com/file/d/ID_DEL_ARCHIVO/view" },
 ```
 
-Para un parcial de práctica usa `tipo: "parcial"`. Las materias deben llamarse exactamente `Matemáticas Básicas`, `Geometría Vectorial` o `Cálculo Diferencial`. Separa varios objetos con comas. No publiques en el repositorio archivos privados ni datos personales de estudiantes.
+Para un parcial de práctica usa `tipo: "parcial"`. Las materias disponibles son `Matemáticas Básicas`, `Geometría Vectorial`, `Cálculo Diferencial`, `Álgebra Lineal`, `Cálculo Integral` y `Física Mecánica`. Separa varios objetos con comas. No publiques en el repositorio archivos privados ni datos personales de estudiantes.
 
 Primero sube el video a YouTube como público o no listado. Para un PDF, súbelo a Drive y configura el acceso como **Cualquier persona con el enlace → Lector**; de lo contrario, los estudiantes no podrán abrirlo. Luego copia el enlace en el campo `url`.
+
+Los recursos actuales están enlazados desde la carpeta pública «Repositorio ITM» de Drive. El repositorio de GitHub guarda solo URLs, no copias de los PDF. Las fotografías están agrupadas en tarjetas que abren su carpeta por parcial. La página muestra doce recursos a la vez; el botón «Mostrar más recursos» permite seguir explorando.
 
 ## Horarios y solicitudes
 
