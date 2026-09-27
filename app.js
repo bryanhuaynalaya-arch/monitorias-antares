@@ -23,7 +23,7 @@ function pintar(){
   $('recursos').innerHTML = items.map(r => {const video = r.tipo === 'video'; const m = materias.find(x=>x.nombre===r.materia); const label = r.tipo === 'parcial' ? 'Parcial de práctica' : video ? 'Video tutorial' : 'Documento'; return `<article class="resource-card"><div class="resource-cover ${m?.tono||'blue'}"><span class="resource-kind">${video?'▶':r.tipo==='parcial'?'✎':'▤'}</span><span>${esc(r.materia)}</span></div><div class="resource-body"><span class="resource-meta">${esc(label)} · ${esc(r.tema)}</span><h3>${esc(r.titulo)}</h3><p>${esc(r.descripcion||'Material de estudio')}</p>${video?`<button class="resource-action" data-video="${youtubeId(r.url)}" data-title="${esc(r.titulo)}">Ver video <span aria-hidden="true">↗</span></button>`:`<a class="resource-action" href="${esc(https(r.url))}" target="_blank" rel="noopener noreferrer">Abrir material <span aria-hidden="true">↗</span></a>`}</div></article>`;}).join('');
   $('sin-resultados').hidden = items.length > 0;
   $('empty-title').textContent = q ? 'No encontramos resultados' : 'Todavía no hay material aquí';
-  $('empty-copy').textContent = q ? 'Prueba con otra palabra o cambia los filtros.' : 'Estamos preparando los primeros recursos. Puedes revisar los temas que trabajaremos:';
+  $('empty-copy').textContent = q ? 'Prueba con otra palabra o cambia los filtros.' : 'Próximamente publicaremos los primeros recursos. Estos son los temas de cada curso:';
   const sugeridas = materias.filter(m => materia === 'Todas' || m.nombre === materia);
   $('topic-suggestions').innerHTML = q ? '' : sugeridas.map(m => `<div class="topic-group"><strong>${esc(m.nombre)}</strong><div>${m.temas.map(t => `<span>${esc(t)}</span>`).join('')}</div></div>`).join('');
 }

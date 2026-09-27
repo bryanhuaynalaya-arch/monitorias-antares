@@ -1,6 +1,6 @@
 # Monitorías Antares
 
-Página gratuita de apoyo académico publicada con GitHub Pages. Las materias, búsqueda, filtros, reproducción de videos y enlaces a documentos funcionan desde archivos estáticos. No requiere instalar nada para actualizar el contenido.
+Iniciativa académica independiente para estudiantes del ITM, publicada con GitHub Pages. Las materias, búsqueda, filtros, reproducción de videos y enlaces a documentos funcionan desde archivos estáticos. No requiere instalar nada para actualizar el contenido.
 
 ## Publicar material
 
