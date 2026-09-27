@@ -3,26 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Monitorías gratuitas y material de estudio de Matemáticas Básicas, Geometría Vectorial y Cálculo Diferencial.">
-  <title>Monitorías Antares | Materias y recursos gratuitos</title>
+  <meta name="theme-color" content="#102b47">
+  <meta name="description" content="Monitorías gratuitas y material de estudio para Matemáticas Básicas, Geometría Vectorial y Cálculo Diferencial.">
+  <title>Monitorías Antares | Aprende a tu ritmo</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="contenido.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-<div class="pagina">
-  <header>
-    <a class="marca" href="#inicio"><span>✦</span> Monitorías <b>Antares</b></a>
-    <button id="menu" class="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav id="nav" aria-label="Navegación principal"><a href="#materias">Materias</a><a href="#materiales">Materiales</a><a href="#monitorias">Monitorías</a></nav>
+  <a class="skip-link" href="#materias">Ir al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Monitorías Antares, inicio"><span class="brand-star" aria-hidden="true">✦</span><span>Monitorías <b>Antares</b></span></a>
+      <button id="menu" class="menu-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">☰</button>
+      <nav id="nav" aria-label="Navegación principal"><a href="#materias">Materias</a><a href="#materiales">Recursos</a><a href="#monitorias">Monitorías</a></nav>
+    </div>
   </header>
   <main id="inicio">
-    <section class="hero"><div><small>APRENDER JUNTOS, A TU RITMO</small><h1>Un espacio para entender las matemáticas.</h1><p>Monitorías gratuitas y material de estudio para estudiantes de la UdeA y el ITM.</p><a href="#materias" class="boton">Explorar materias ↗</a></div><div class="grafica" aria-hidden="true"><span>∿</span><i>f(x) = x²</i><em>∫ f(x) dx</em></div></section>
-    <section id="materias" class="seccion"><div class="titulo"><div><small>01 / MATERIAS</small><h2>¿Qué quieres estudiar?</h2></div><p>Elige una materia para ver los temas y el material disponible.</p></div><div class="tarjetas" id="materia-tarjetas"></div></section>
-    <section id="materiales" class="seccion biblioteca"><div class="titulo"><div><small>02 / BIBLIOTECA</small><h2>Videos y documentos</h2></div><p>Busca una materia o un tema. Los recursos se irán publicando aquí.</p></div><div class="filtros"><input id="busqueda" aria-label="Buscar materia o tema" placeholder="Busca una materia o tema"><select id="materia-filtro" aria-label="Filtrar por materia"></select></div><div class="tipos" id="tipos"></div><div class="tarjetas" id="recursos"></div><p id="sin-resultados" class="sin-resultados" hidden>No encontramos materias con esa búsqueda. Prueba con otro tema.</p></section>
-    <section id="monitorias" class="seccion monitorias"><div><small>03 / MONITORÍAS</small><h2>Estudiemos el tema que necesitas.</h2><p>Las monitorías son gratuitas. Aquí se publicarán los horarios y la forma de solicitar un espacio.</p></div><aside><span>✦</span><strong>Próximamente</strong><p>Horarios y solicitudes de monitoría</p></aside></section>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-line"></span> MONITORÍAS GRATUITAS · UDEA + ITM</span>
+          <h1>Las matemáticas se entienden <em>paso a paso.</em></h1>
+          <p>Explora temas, consulta materiales y encuentra apoyo para tus clases. Un espacio de estudio hecho por Bryan para estudiantes como tú.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#materias">Explorar materias <span aria-hidden="true">↗</span></a><a class="text-link" href="#materiales">Ver recursos <span aria-hidden="true">→</span></a></div>
+          <div class="hero-note"><span class="note-icon" aria-hidden="true">✦</span> Matemáticas Básicas · Geometría Vectorial · Cálculo Diferencial</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-label">IDEAS QUE TOMAN FORMA</div>
+          <svg viewBox="0 0 520 400" role="presentation" focusable="false">
+            <defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#87bfd0" stroke-opacity=".18" stroke-width="1"/></pattern><linearGradient id="fill" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#26b7bb" stop-opacity=".05"/><stop offset="1" stop-color="#7bd4dc" stop-opacity=".36"/></linearGradient></defs>
+            <rect x="36" y="26" width="448" height="330" rx="18" fill="url(#grid)"/>
+            <path d="M70 288H452M258 64V338" stroke="#cfebee" stroke-opacity=".7" stroke-width="1.4"/><path d="M447 283l7 5-7 5M253 70l5-8 5 8" fill="none" stroke="#cfebee" stroke-width="1.4"/>
+            <path d="M82 256C141 255 151 198 199 194S276 279 326 223 387 114 445 130V288H82Z" fill="url(#fill)"/><path d="M82 256C141 255 151 198 199 194S276 279 326 223 387 114 445 130" fill="none" stroke="#70d8d9" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="199" cy="194" r="7" fill="#f8cd6d"/><circle cx="326" cy="223" r="7" fill="#f8cd6d"/><path d="M199 194V288M326 223V288" stroke="#f8cd6d" stroke-opacity=".7" stroke-dasharray="5 7"/>
+            <text x="395" y="84" fill="#d5eff1" font-size="23" font-family="Georgia,serif" font-style="italic">f(x)</text><text x="466" y="312" fill="#d5eff1" font-size="17" font-family="Georgia,serif">x</text><text x="238" y="65" fill="#d5eff1" font-size="17" font-family="Georgia,serif">y</text>
+          </svg>
+          <div class="art-footer"><span>OBSERVA</span><span>CONSTRUYE</span><span>COMPRENDE</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="materias" class="section subjects-section">
+      <div class="container"><div class="section-head"><div><span class="section-label">01 / EXPLORA</span><h2>Empieza por una materia</h2></div><p>Elige lo que estás estudiando y encuentra los temas organizados para ti.</p></div><div id="materia-tarjetas" class="subject-grid"></div></div>
+    </section>
+    <section id="materiales" class="section library-section">
+      <div class="container"><div class="section-head"><div><span class="section-label">02 / BIBLIOTECA</span><h2>Recursos para practicar</h2></div><p>Videos, guías y parciales de práctica, reunidos por materia y tema.</p></div>
+      <div class="library-controls"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar recursos</span><input id="busqueda" type="search" placeholder="Buscar tema o material"></label><select id="materia-filtro" aria-label="Filtrar por materia"></select></div>
+      <div id="tipos" class="filter-pills" aria-label="Tipo de recurso"></div>
+      <div id="recursos" class="resource-grid" aria-live="polite"></div>
+      <div id="sin-resultados" class="empty-state" hidden><div class="empty-icon" aria-hidden="true">◇</div><h3 id="empty-title">Todavía no hay material aquí</h3><p id="empty-copy">Estamos preparando los primeros recursos. Mientras tanto, explora los temas de cada materia arriba.</p></div>
+      </div>
+    </section>
+    <section id="monitorias" class="section tutoring-section"><div class="container tutoring-inner"><div><span class="section-label">03 / ACOMPAÑAMIENTO</span><h2>Una duda a la vez.<br><em>Aprendamos juntos.</em></h2><p>Las monitorías son gratuitas. Publicaremos aquí los horarios disponibles y cómo reservar un espacio.</p><div id="horarios" class="schedule-list"></div><a id="contacto" class="button button-primary" href="#" hidden>Solicitar monitoría ↗</a></div><div class="tutoring-card"><span class="card-overline">MONITORÍAS ANTARES</span><span class="tutoring-glyph" aria-hidden="true">✦</span><strong>Preguntar también es aprender.</strong><p>Matemáticas Básicas<br>Geometría Vectorial<br>Cálculo Diferencial</p><span class="card-foot">Gratis para estudiantes · UdeA e ITM</span></div></div></section>
   </main>
-  <footer><b>✦ Monitorías Antares</b><span>Un proyecto de Bryan · UdeA e ITM</span></footer>
-</div>
+  <footer><div class="container footer-inner"><a href="#inicio" class="footer-brand">✦ Monitorías Antares</a><span>Creado por Bryan · Medellín, Colombia</span><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <dialog id="video-dialog" class="video-dialog" aria-label="Reproducir video"><div class="video-dialog-head"><strong id="video-title"></strong><button id="video-close" aria-label="Cerrar video">✕</button></div><div class="video-frame" id="video-frame"></div></dialog>
 </body>
 </html>
